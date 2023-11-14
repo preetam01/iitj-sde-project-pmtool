@@ -1,0 +1,16 @@
+<!-- tasks/templates/tasks/create_task.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Task</title>
+</head>
+<body>
+    <h2>Create Task for {{ project.name }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create</button>
+    </form>
+    <a href="{% url 'task_list' project.id %}">Back to Task List</a>
+</body>
+</html>
